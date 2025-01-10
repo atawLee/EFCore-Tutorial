@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{DBD5830F-D84A-4B38-9836-D15BADB55953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{B96EE9AC-E1C6-4B6C-8A9E-97A851A276A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migration", "Migration\Migration.csproj", "{069B77D1-0ABC-4CE5-9F46-C4F39AD89922}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBD5830F-D84A-4B38-9836-D15BADB55953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD5830F-D84A-4B38-9836-D15BADB55953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD5830F-D84A-4B38-9836-D15BADB55953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD5830F-D84A-4B38-9836-D15BADB55953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B96EE9AC-E1C6-4B6C-8A9E-97A851A276A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B96EE9AC-E1C6-4B6C-8A9E-97A851A276A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B96EE9AC-E1C6-4B6C-8A9E-97A851A276A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B96EE9AC-E1C6-4B6C-8A9E-97A851A276A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{069B77D1-0ABC-4CE5-9F46-C4F39AD89922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{069B77D1-0ABC-4CE5-9F46-C4F39AD89922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{069B77D1-0ABC-4CE5-9F46-C4F39AD89922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{069B77D1-0ABC-4CE5-9F46-C4F39AD89922}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
