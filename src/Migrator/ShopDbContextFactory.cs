@@ -5,21 +5,19 @@ using Microsoft.Extensions.Configuration;
 
 namespace Migrator;
 
-public class TodoDbContextFactory : IDesignTimeDbContextFactory<TodoDbContext>
+public class ShopDbContextFactory : IDesignTimeDbContextFactory<ShopDbContext>
 {
-    public TodoDbContext CreateDbContext(string[] args)
+    public ShopDbContext CreateDbContext(string[] args)
     {
         IConfigurationRoot configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile($"appsettings.json")
             .Build();
 
-        var builder = new DbContextOptionsBuilder<TodoDbContext>();
+        var builder = new DbContextOptionsBuilder<ShopDbContext>();
         var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-        builder.UseSqlite(connectionString
-            , b=> b.MigrationsAssembly("Migrator"));
-
-        return new TodoDbContext(builder.Options);
+        builder.UseNpgsql(connectionString, b=> b.MigrationsAssembly("Migrator"));
+        return new ShopDbContext(builder.Options);
     }
 }

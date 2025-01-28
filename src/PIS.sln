@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{B96EE9AC-E1C6-4B6C-8A9E-97A851A276A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migration", "Migration\Migration.csproj", "{2F10E685-B235-40BD-AD3D-244977E8ED80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrator", "Migrator\Migrator.csproj", "{2F10E685-B235-40BD-AD3D-244977E8ED80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
