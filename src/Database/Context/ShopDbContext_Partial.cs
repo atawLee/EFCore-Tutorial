@@ -7,7 +7,9 @@ public partial class ShopDbContext
 {
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        
-            
+        modelBuilder.Entity<DocumentBase>()
+            .UseTptMappingStrategy()
+            .ToTable("Documents");
+
     }
 }
