@@ -18,15 +18,16 @@ using IHost host = Host.CreateDefaultBuilder(args)
 
 var service = host.Services;
 var context= service.GetRequiredService<ShopDbContext>();
-context.ContractDocuments.Add(new ContractDocumentBase
+
+context.ErrorLogs.Add(new ErrorLog
 {
-    Id = 0,
-    Title = "test",
-    CreatedBy = "null",
-    CreatedDate = default,
-    ContractorName = "null",
-    ExpirationDate = default
+    
+    Timestamp = DateTime.UtcNow,
+    Message = "Error Message",
+    ExceptionMessage = "Error Message",
+    StackTrace = "Stack Trace"
 });
+
 
 await context.SaveChangesAsync();
 
