@@ -23,10 +23,10 @@ src
 └─Repository
 ```
 ## 각 프로젝트별 역할
-Application : 테스트를 위한 콘솔 어플리케이션 실행 프로젝트
-Database : EF Core의 DbContext와 엔터티 정의 프로젝트
-Migrator : 마이그레이션을 관리하는 프로젝트
-Repository : DbContext를 이용해서 데이터를 가져오는 프로젝트 
+- Application : 테스트를 위한 콘솔 어플리케이션 실행 프로젝트
+- Database : EF Core의 DbContext와 엔터티 정의 프로젝트
+- Migrator : 마이그레이션을 관리하는 프로젝트
+- Repository : DbContext를 이용해서 데이터를 가져오는 프로젝트 
 
 
 
