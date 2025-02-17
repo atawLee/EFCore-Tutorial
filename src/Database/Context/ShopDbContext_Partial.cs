@@ -5,11 +5,5 @@ namespace Database.Context;
 
 public partial class ShopDbContext
 {
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<DocumentBase>()
-            .UseTpcMappingStrategy()
-            .ToTable("Documents");
-
-    }
+   
 }

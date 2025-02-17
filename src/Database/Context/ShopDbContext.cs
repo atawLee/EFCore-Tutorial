@@ -25,4 +25,11 @@ public partial class ShopDbContext : DbContext
     {
         
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<DocumentBase>()
+            .UseTptMappingStrategy()
+            .ToTable("Documents");
+    }
 }
