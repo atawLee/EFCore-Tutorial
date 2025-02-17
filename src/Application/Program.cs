@@ -1,5 +1,6 @@
 ﻿using Repository;
 using Database.Context;
+using Database.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,9 +18,19 @@ using IHost host = Host.CreateDefaultBuilder(args)
 
 var service = host.Services.GetRequiredService<ProductRepository>();
 var products = service.GetProducts();
+
+// service.AddProduct(new Product
+// {
+//     Category = ProductCategory.Electronic,
+//     ProductName = "전자레인지",
+//     Description = "전자레인지 설명",
+//     Price = 156000,
+//     CreatedAt = DateTimeOffset.UtcNow
+// });
+
 foreach (var product in products)
 {
-    Console.WriteLine(product.ProductName);
+    Console.WriteLine(product.Category.ToString());
 }
 
 Console.ReadLine();

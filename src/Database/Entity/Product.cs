@@ -23,18 +23,3 @@ public class Product
     
     public DateTimeOffset CreatedAt { get; set; } = DateTime.UtcNow;
 }
-
-public class ElectronicProduct : Product
-{
-    public int WarrantyPeriod { get; set; } 
-}
-
-public class FoodProduct : Product
-{
-    public DateTimeOffset ExpiryDate { get; set; }
-}
-
-public class ClothingProduct : Product
-{
-    public string Size { get; set; }
-} 
