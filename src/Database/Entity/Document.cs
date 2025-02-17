@@ -2,7 +2,7 @@
 
 namespace Database.Entity;
 
-public class DocumentBase
+public abstract class DocumentBase
 {
     [Key]
     public int Id { get; set; }

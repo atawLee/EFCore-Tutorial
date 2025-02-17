@@ -16,21 +16,21 @@ using IHost host = Host.CreateDefaultBuilder(args)
     
     .Build();
 
-var service = host.Services.GetRequiredService<ProductRepository>();
-var products = service.GetProducts();
-
-// service.AddProduct(new Product
-// {
-//     Category = ProductCategory.Electronic,
-//     ProductName = "전자레인지",
-//     Description = "전자레인지 설명",
-//     Price = 156000,
-//     CreatedAt = DateTimeOffset.UtcNow
-// });
-
-foreach (var product in products)
+var service = host.Services;
+var context= service.GetRequiredService<ShopDbContext>();
+context.ContractDocuments.Add(new ContractDocumentBase
 {
-    Console.WriteLine(product.Category.ToString());
-}
+    Id = 0,
+    Title = "test",
+    CreatedBy = "null",
+    CreatedDate = default,
+    ContractorName = "null",
+    ExpirationDate = default
+});
+
+await context.SaveChangesAsync();
+
+
+
 
 Console.ReadLine();
