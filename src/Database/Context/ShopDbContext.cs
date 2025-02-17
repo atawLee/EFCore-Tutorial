@@ -15,6 +15,10 @@ public partial class ShopDbContext : DbContext
     
     public DbSet<ContractDocumentBase> ContractDocuments { get; set; }
     
+    public DbSet<SystemLog> SystemLogs { get; set; }
+
+    public DbSet<ErrorLog> ErrorLogs { get; set; }
+
     public ShopDbContext(DbContextOptions<ShopDbContext> options) 
         :base(options)
     {
@@ -31,5 +35,10 @@ public partial class ShopDbContext : DbContext
         modelBuilder.Entity<DocumentBase>()
             .UseTptMappingStrategy()
             .ToTable("Documents");
+
+        modelBuilder.Entity<Log>()
+            .UseTpcMappingStrategy();
+
     }
 }
+
