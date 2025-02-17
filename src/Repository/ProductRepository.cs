@@ -15,5 +15,11 @@ public class ProductRepository
     public List<Product> GetProducts()
     {
         return _context.Products.ToList();
-    }  
+    } 
+    
+    public void AddProduct(Product product)
+    {
+        _context.Products.Add(product);
+        _context.SaveChanges();
+    }
 }
