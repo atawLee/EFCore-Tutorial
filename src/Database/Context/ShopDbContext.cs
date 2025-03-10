@@ -5,6 +5,10 @@ namespace Database.Context;
 
 public partial class ShopDbContext : DbContext
 {
+    public DbSet<SystemLog> SystemLogs { get; set; }
+    public DbSet<ErrorLog> ErrorLogs { get; set; }
+    
+    #region 생략
     public DbSet<Product> Products { get; set; }
     
     public DbSet<DocumentBase> Documents { get; set; }
@@ -14,10 +18,7 @@ public partial class ShopDbContext : DbContext
     public DbSet<GeneralDocumentBase> GeneralDocuments { get; set; }
     
     public DbSet<ContractDocumentBase> ContractDocuments { get; set; }
-    
-    public DbSet<SystemLog> SystemLogs { get; set; }
-
-    public DbSet<ErrorLog> ErrorLogs { get; set; }
+    #endregion
 
     public ShopDbContext(DbContextOptions<ShopDbContext> options) 
         :base(options)
@@ -38,7 +39,6 @@ public partial class ShopDbContext : DbContext
 
         modelBuilder.Entity<Log>()
             .UseTpcMappingStrategy();
-
     }
 }
 
