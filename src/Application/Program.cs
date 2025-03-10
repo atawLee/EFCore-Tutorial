@@ -19,13 +19,14 @@ using IHost host = Host.CreateDefaultBuilder(args)
 var service = host.Services;
 var context= service.GetRequiredService<ShopDbContext>();
 
-context.ErrorLogs.Add(new ErrorLog
+context.Payments.AddAsync(new CreditCardPayment
 {
-    
-    Timestamp = DateTime.UtcNow,
-    Message = "Error Message",
-    ExceptionMessage = "Error Message",
-    StackTrace = "Stack Trace"
+    Amount = 3000,
+    PaymentDate = DateTimeOffset.UtcNow,
+    Status = "Completed",
+    CardNumber = "0000-0000-0000-1234",
+    CardHolder = "John Doe",
+    ExpirationDate = "12/23"
 });
 await context.SaveChangesAsync();
 

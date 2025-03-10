@@ -5,10 +5,12 @@ namespace Database.Context;
 
 public partial class ShopDbContext : DbContext
 {
+    #region TPC
     public DbSet<SystemLog> SystemLogs { get; set; }
     public DbSet<ErrorLog> ErrorLogs { get; set; }
+    #endregion
     
-    #region 생략
+    #region TPT
     public DbSet<Product> Products { get; set; }
     
     public DbSet<DocumentBase> Documents { get; set; }
@@ -18,6 +20,10 @@ public partial class ShopDbContext : DbContext
     public DbSet<GeneralDocumentBase> GeneralDocuments { get; set; }
     
     public DbSet<ContractDocumentBase> ContractDocuments { get; set; }
+    #endregion
+    
+    #region TPH
+    public DbSet<Payment> Payments { get; set; }
     #endregion
 
     public ShopDbContext(DbContextOptions<ShopDbContext> options) 
@@ -39,6 +45,13 @@ public partial class ShopDbContext : DbContext
 
         modelBuilder.Entity<Log>()
             .UseTpcMappingStrategy();
+
+        modelBuilder.Entity<Payment>()
+            .UseTphMappingStrategy()
+            .HasDiscriminator<string>("PaymentType") // Discriminator 컬럼 이름 변경
+            .HasValue<CreditCardPayment>("CreditCard")
+            .HasValue<PayPalPayment>("PayPal")
+            .HasValue<BankTransferPayment>("BankTransfer");
     }
 }
 
