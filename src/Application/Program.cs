@@ -27,11 +27,6 @@ context.ErrorLogs.Add(new ErrorLog
     ExceptionMessage = "Error Message",
     StackTrace = "Stack Trace"
 });
-
-
 await context.SaveChangesAsync();
-
-
-
 
 Console.ReadLine();
