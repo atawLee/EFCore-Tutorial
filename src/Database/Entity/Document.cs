@@ -11,6 +11,7 @@ public abstract class DocumentBase
     [MaxLength(20)]
     public string CreatedBy { get; set; }
     public DateTime CreatedDate { get; set; }
+    public bool IsDeleted { get; set; } = false;
 }
 
 public class GeneralDocumentBase : DocumentBase

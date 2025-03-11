@@ -1,6 +1,7 @@
 ﻿using Repository;
 using Database.Context;
 using Database.Entity;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,7 +19,8 @@ using IHost host = Host.CreateDefaultBuilder(args)
 
 var service = host.Services;
 var context= service.GetRequiredService<ShopDbContext>();
-
+var user = new SqlParameter("user", "johndoe");
+context.Database.ExecuteSql($"SELECT * FROM Products WHERE ProductName = {user}");
 context.Payments.AddAsync(new CreditCardPayment
 {
     Amount = 3000,
